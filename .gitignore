@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment
+.env
+.env.local
+*.env
+!.env.example
+
+# ChromaDB local persistence
+backend/knowledge_base/.chroma/
+chroma_db/
+
+# Node
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+
+# Extension build output
+extension/dist/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local test documents (never commit client MTCs)
+sample_docs/
+eval_set/
+*.pdf
+!docs/**/*.pdf
