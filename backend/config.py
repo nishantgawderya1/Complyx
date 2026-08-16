@@ -40,9 +40,17 @@ class Settings(BaseSettings):
     # PDF parsing
     TESSERACT_CMD: str = ""
 
+    # CORS: comma-separated origins allowed to call the API.
+    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000"
+
     @property
     def is_production(self) -> bool:
         return self.APP_ENV == "production"
+
+    @property
+    def cors_origins(self) -> list[str]:
+        """CORS_ORIGINS parsed into a list, empty entries dropped."""
+        return [origin.strip() for origin in self.CORS_ORIGINS.split(",") if origin.strip()]
 
 
 @lru_cache
