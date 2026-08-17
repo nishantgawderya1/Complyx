@@ -1,0 +1,602 @@
+{
+  "schema_version": "2",
+  "disclaimer": "Values compiled from publicly published specification summaries and mill datasheets. NOT verified against the governing code edition. Every entry carries verified=false until a qualified reviewer checks it. An unverified entry must never back a verdict shown to a real inspector.",
+  "canonical_units": {
+    "stress": "MPa",
+    "ratio": "%",
+    "length": "mm"
+  },
+  "standards": [
+    {
+      "specification": "ASTM A36/A36M",
+      "grade": "-",
+      "canonical_key": "ASTM_A36",
+      "aliases": [
+        "astm a36",
+        "a36",
+        "a 36",
+        "asme sa36",
+        "sa-36",
+        "sa 36",
+        "astm a36/a36m",
+        "a36m"
+      ],
+      "clause_reference": "ASTM A36/A36M Tables 3 and 4",
+      "source": "Public specification summary",
+      "verified": false,
+      "requirements": [
+        {
+          "product_form": "plate",
+          "condition": "any",
+          "thickness_min_mm": 0,
+          "thickness_max_mm": 20,
+          "properties": {
+            "tensile_strength": { "min": 400, "max": 550, "unit": "MPa" },
+            "yield_strength": { "min": 250, "max": null, "unit": "MPa" },
+            "elongation_200mm": { "min": 20, "max": null, "unit": "%" },
+            "elongation_50mm": { "min": 23, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.25, "basis": "heat" },
+            "P": { "max": 0.04, "basis": "heat" },
+            "S": { "max": 0.05, "basis": "heat" },
+            "Si": { "max": 0.4, "basis": "heat" },
+            "Cu": { "min": 0.2, "basis": "heat" }
+          }
+        },
+        {
+          "product_form": "plate",
+          "condition": "any",
+          "thickness_min_mm": 20,
+          "thickness_max_mm": 40,
+          "properties": {
+            "tensile_strength": { "min": 400, "max": 550, "unit": "MPa" },
+            "yield_strength": { "min": 250, "max": null, "unit": "MPa" },
+            "elongation_200mm": { "min": 20, "max": null, "unit": "%" },
+            "elongation_50mm": { "min": 23, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.25, "basis": "heat" },
+            "Mn": { "min": 0.8, "max": 1.2, "basis": "heat" },
+            "P": { "max": 0.04, "basis": "heat" },
+            "S": { "max": 0.05, "basis": "heat" },
+            "Si": { "max": 0.4, "basis": "heat" },
+            "Cu": { "min": 0.2, "basis": "heat" }
+          }
+        },
+        {
+          "product_form": "plate",
+          "condition": "any",
+          "thickness_min_mm": 40,
+          "thickness_max_mm": null,
+          "properties": {
+            "tensile_strength": { "min": 400, "max": 550, "unit": "MPa" },
+            "yield_strength": { "min": 250, "max": null, "unit": "MPa" },
+            "elongation_200mm": { "min": 20, "max": null, "unit": "%" },
+            "elongation_50mm": { "min": 23, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.27, "basis": "heat" },
+            "Mn": { "min": 0.85, "max": 1.2, "basis": "heat" },
+            "P": { "max": 0.04, "basis": "heat" },
+            "S": { "max": 0.05, "basis": "heat" },
+            "Si": { "min": 0.15, "max": 0.4, "basis": "heat" },
+            "Cu": { "min": 0.2, "basis": "heat" }
+          }
+        }
+      ]
+    },
+    {
+      "specification": "ASTM A516/A516M",
+      "grade": "60",
+      "canonical_key": "ASTM_A516_60",
+      "aliases": [
+        "astm a516 60",
+        "astm a516 grade 60",
+        "a516 grade 60",
+        "a516 gr 60",
+        "a516 gr.60",
+        "a516gr60",
+        "a516-60",
+        "sa-516 60",
+        "sa 516 grade 60",
+        "sa516 gr 60",
+        "asme sa-516 grade 60"
+      ],
+      "clause_reference": "ASTM A516/A516M Tables 2 and 3",
+      "source": "Public specification summary",
+      "verified": false,
+      "requirements": [
+        {
+          "product_form": "plate",
+          "condition": "any",
+          "thickness_min_mm": 0,
+          "thickness_max_mm": 12.5,
+          "properties": {
+            "tensile_strength": { "min": 415, "max": 550, "unit": "MPa" },
+            "yield_strength": { "min": 220, "max": null, "unit": "MPa" },
+            "elongation_200mm": { "min": 21, "max": null, "unit": "%" },
+            "elongation_50mm": { "min": 25, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.21, "basis": "heat" },
+            "Mn": { "min": 0.6, "max": 0.9, "basis": "heat" },
+            "P": { "max": 0.035, "basis": "heat" },
+            "S": { "max": 0.035, "basis": "heat" },
+            "Si": { "min": 0.15, "max": 0.4, "basis": "heat" }
+          }
+        },
+        {
+          "product_form": "plate",
+          "condition": "any",
+          "thickness_min_mm": 12.5,
+          "thickness_max_mm": 50,
+          "properties": {
+            "tensile_strength": { "min": 415, "max": 550, "unit": "MPa" },
+            "yield_strength": { "min": 220, "max": null, "unit": "MPa" },
+            "elongation_200mm": { "min": 21, "max": null, "unit": "%" },
+            "elongation_50mm": { "min": 25, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.23, "basis": "heat" },
+            "Mn": { "min": 0.85, "max": 1.2, "basis": "heat" },
+            "P": { "max": 0.035, "basis": "heat" },
+            "S": { "max": 0.035, "basis": "heat" },
+            "Si": { "min": 0.15, "max": 0.4, "basis": "heat" }
+          }
+        },
+        {
+          "product_form": "plate",
+          "condition": "any",
+          "thickness_min_mm": 50,
+          "thickness_max_mm": null,
+          "properties": {
+            "tensile_strength": { "min": 415, "max": 550, "unit": "MPa" },
+            "yield_strength": { "min": 220, "max": null, "unit": "MPa" },
+            "elongation_200mm": { "min": 21, "max": null, "unit": "%" },
+            "elongation_50mm": { "min": 25, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.25, "basis": "heat" },
+            "Mn": { "min": 0.85, "max": 1.2, "basis": "heat" },
+            "P": { "max": 0.035, "basis": "heat" },
+            "S": { "max": 0.035, "basis": "heat" },
+            "Si": { "min": 0.15, "max": 0.4, "basis": "heat" }
+          }
+        }
+      ]
+    },
+    {
+      "specification": "ASTM A516/A516M",
+      "grade": "70",
+      "canonical_key": "ASTM_A516_70",
+      "aliases": [
+        "astm a516 70",
+        "astm a516 grade 70",
+        "a516 grade 70",
+        "a516 gr 70",
+        "a516 gr.70",
+        "a516gr70",
+        "a516-70",
+        "sa-516 70",
+        "sa 516 grade 70",
+        "sa516 gr 70",
+        "asme sa-516 grade 70",
+        "sa-516m grade 485"
+      ],
+      "clause_reference": "ASTM A516/A516M Tables 2 and 3",
+      "source": "Public specification summary",
+      "verified": false,
+      "requirements": [
+        {
+          "product_form": "plate",
+          "condition": "any",
+          "thickness_min_mm": 0,
+          "thickness_max_mm": 12.5,
+          "properties": {
+            "tensile_strength": { "min": 485, "max": 620, "unit": "MPa" },
+            "yield_strength": { "min": 260, "max": null, "unit": "MPa" },
+            "elongation_200mm": { "min": 17, "max": null, "unit": "%" },
+            "elongation_50mm": { "min": 21, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.27, "basis": "heat" },
+            "Mn": { "min": 0.85, "max": 1.2, "basis": "heat" },
+            "P": { "max": 0.035, "basis": "heat" },
+            "S": { "max": 0.035, "basis": "heat" },
+            "Si": { "min": 0.15, "max": 0.4, "basis": "heat" }
+          }
+        },
+        {
+          "product_form": "plate",
+          "condition": "any",
+          "thickness_min_mm": 12.5,
+          "thickness_max_mm": 50,
+          "properties": {
+            "tensile_strength": { "min": 485, "max": 620, "unit": "MPa" },
+            "yield_strength": { "min": 260, "max": null, "unit": "MPa" },
+            "elongation_200mm": { "min": 17, "max": null, "unit": "%" },
+            "elongation_50mm": { "min": 21, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.28, "basis": "heat" },
+            "Mn": { "min": 0.85, "max": 1.2, "basis": "heat" },
+            "P": { "max": 0.035, "basis": "heat" },
+            "S": { "max": 0.035, "basis": "heat" },
+            "Si": { "min": 0.15, "max": 0.4, "basis": "heat" }
+          }
+        },
+        {
+          "product_form": "plate",
+          "condition": "any",
+          "thickness_min_mm": 50,
+          "thickness_max_mm": 100,
+          "properties": {
+            "tensile_strength": { "min": 485, "max": 620, "unit": "MPa" },
+            "yield_strength": { "min": 260, "max": null, "unit": "MPa" },
+            "elongation_200mm": { "min": 17, "max": null, "unit": "%" },
+            "elongation_50mm": { "min": 21, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.3, "basis": "heat" },
+            "Mn": { "min": 0.85, "max": 1.2, "basis": "heat" },
+            "P": { "max": 0.035, "basis": "heat" },
+            "S": { "max": 0.035, "basis": "heat" },
+            "Si": { "min": 0.15, "max": 0.4, "basis": "heat" }
+          }
+        },
+        {
+          "product_form": "plate",
+          "condition": "any",
+          "thickness_min_mm": 100,
+          "thickness_max_mm": null,
+          "properties": {
+            "tensile_strength": { "min": 485, "max": 620, "unit": "MPa" },
+            "yield_strength": { "min": 260, "max": null, "unit": "MPa" },
+            "elongation_200mm": { "min": 17, "max": null, "unit": "%" },
+            "elongation_50mm": { "min": 21, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.31, "basis": "heat" },
+            "Mn": { "min": 0.85, "max": 1.2, "basis": "heat" },
+            "P": { "max": 0.035, "basis": "heat" },
+            "S": { "max": 0.035, "basis": "heat" },
+            "Si": { "min": 0.15, "max": 0.4, "basis": "heat" }
+          }
+        }
+      ]
+    },
+    {
+      "specification": "ASTM A106/A106M",
+      "grade": "B",
+      "canonical_key": "ASTM_A106_B",
+      "aliases": [
+        "astm a106 b",
+        "astm a106 grade b",
+        "a106 grade b",
+        "a106 gr b",
+        "a106 gr.b",
+        "a106gr.b",
+        "a106gradeb",
+        "a106-b",
+        "sa-106 b",
+        "sa106 gr b",
+        "asme sa-106 grade b"
+      ],
+      "clause_reference": "ASTM A106/A106M Tables 1 and 2",
+      "source": "Public specification summary",
+      "verified": false,
+      "requirements": [
+        {
+          "product_form": "pipe",
+          "condition": "any",
+          "thickness_min_mm": null,
+          "thickness_max_mm": null,
+          "properties": {
+            "tensile_strength": { "min": 415, "max": null, "unit": "MPa" },
+            "yield_strength": { "min": 240, "max": null, "unit": "MPa" },
+            "elongation_50mm": { "min": 30, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.3, "basis": "heat" },
+            "Mn": { "min": 0.29, "max": 1.06, "basis": "heat" },
+            "P": { "max": 0.035, "basis": "heat" },
+            "S": { "max": 0.035, "basis": "heat" },
+            "Si": { "min": 0.1, "basis": "heat" },
+            "Cr": { "max": 0.4, "basis": "heat" },
+            "Cu": { "max": 0.4, "basis": "heat" },
+            "Mo": { "max": 0.15, "basis": "heat" },
+            "Ni": { "max": 0.4, "basis": "heat" },
+            "V": { "max": 0.08, "basis": "heat" }
+          }
+        }
+      ]
+    },
+    {
+      "specification": "ASTM A53/A53M",
+      "grade": "B",
+      "canonical_key": "ASTM_A53_B",
+      "aliases": [
+        "astm a53 b",
+        "astm a53 grade b",
+        "a53 grade b",
+        "a53 gr b",
+        "a53 gr.b",
+        "a53gr.b",
+        "a53-b",
+        "sa-53 b",
+        "asme sa-53 grade b"
+      ],
+      "clause_reference": "ASTM A53/A53M Tables X1 and X2",
+      "source": "Public specification summary",
+      "verified": false,
+      "requirements": [
+        {
+          "product_form": "pipe",
+          "condition": "any",
+          "thickness_min_mm": null,
+          "thickness_max_mm": null,
+          "properties": {
+            "tensile_strength": { "min": 415, "max": null, "unit": "MPa" },
+            "yield_strength": { "min": 240, "max": null, "unit": "MPa" }
+          },
+          "chemical": {
+            "C": { "max": 0.3, "basis": "heat" },
+            "Mn": { "max": 1.2, "basis": "heat" },
+            "P": { "max": 0.05, "basis": "heat" },
+            "S": { "max": 0.045, "basis": "heat" },
+            "Cr": { "max": 0.4, "basis": "heat" },
+            "Cu": { "max": 0.4, "basis": "heat" },
+            "Mo": { "max": 0.15, "basis": "heat" },
+            "Ni": { "max": 0.4, "basis": "heat" },
+            "V": { "max": 0.08, "basis": "heat" }
+          }
+        }
+      ]
+    },
+    {
+      "specification": "ASTM A312/A312M",
+      "grade": "TP304",
+      "canonical_key": "ASTM_A312_TP304",
+      "aliases": [
+        "astm a312 tp304",
+        "a312 tp304",
+        "a312 tp 304",
+        "a312tp304",
+        "a312-tp304",
+        "sa-312 tp304",
+        "sa312 tp304",
+        "asme sa-312 tp304"
+      ],
+      "clause_reference": "ASTM A312/A312M Tables 1 and 2",
+      "source": "Public specification summary",
+      "verified": false,
+      "requirements": [
+        {
+          "product_form": "pipe",
+          "condition": "any",
+          "thickness_min_mm": null,
+          "thickness_max_mm": null,
+          "properties": {
+            "tensile_strength": { "min": 515, "max": null, "unit": "MPa" },
+            "yield_strength": { "min": 205, "max": null, "unit": "MPa" },
+            "elongation_50mm": { "min": 35, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.08, "basis": "heat" },
+            "Mn": { "max": 2.0, "basis": "heat" },
+            "P": { "max": 0.045, "basis": "heat" },
+            "S": { "max": 0.03, "basis": "heat" },
+            "Si": { "max": 1.0, "basis": "heat" },
+            "Cr": { "min": 18.0, "max": 20.0, "basis": "heat" },
+            "Ni": { "min": 8.0, "max": 11.0, "basis": "heat" }
+          }
+        }
+      ]
+    },
+    {
+      "specification": "ASTM A312/A312M",
+      "grade": "TP316",
+      "canonical_key": "ASTM_A312_TP316",
+      "aliases": [
+        "astm a312 tp316",
+        "a312 tp316",
+        "a312 tp 316",
+        "a312tp316",
+        "a312-tp316",
+        "sa-312 tp316",
+        "sa312 tp316",
+        "asme sa-312 tp316"
+      ],
+      "clause_reference": "ASTM A312/A312M Tables 1 and 2",
+      "source": "Public specification summary",
+      "verified": false,
+      "requirements": [
+        {
+          "product_form": "pipe",
+          "condition": "any",
+          "thickness_min_mm": null,
+          "thickness_max_mm": null,
+          "properties": {
+            "tensile_strength": { "min": 515, "max": null, "unit": "MPa" },
+            "yield_strength": { "min": 205, "max": null, "unit": "MPa" },
+            "elongation_50mm": { "min": 35, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.08, "basis": "heat" },
+            "Mn": { "max": 2.0, "basis": "heat" },
+            "P": { "max": 0.045, "basis": "heat" },
+            "S": { "max": 0.03, "basis": "heat" },
+            "Si": { "max": 1.0, "basis": "heat" },
+            "Cr": { "min": 16.0, "max": 18.0, "basis": "heat" },
+            "Ni": { "min": 11.0, "max": 14.0, "basis": "heat" },
+            "Mo": { "min": 2.0, "max": 3.0, "basis": "heat" }
+          }
+        }
+      ]
+    },
+    {
+      "specification": "ASME SA-240/SA-240M",
+      "grade": "TP304",
+      "canonical_key": "ASME_SA240_TP304",
+      "aliases": [
+        "sa-240 tp304",
+        "sa240 tp304",
+        "sa-240 304",
+        "asme sa-240 tp304",
+        "astm a240 tp304",
+        "a240 tp304",
+        "a240 type 304",
+        "a240-304"
+      ],
+      "clause_reference": "ASME SA-240/SA-240M Tables 1 and 2",
+      "source": "Public specification summary",
+      "verified": false,
+      "requirements": [
+        {
+          "product_form": "plate",
+          "condition": "any",
+          "thickness_min_mm": null,
+          "thickness_max_mm": null,
+          "properties": {
+            "tensile_strength": { "min": 515, "max": null, "unit": "MPa" },
+            "yield_strength": { "min": 205, "max": null, "unit": "MPa" },
+            "elongation_50mm": { "min": 40, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.07, "basis": "heat" },
+            "Mn": { "max": 2.0, "basis": "heat" },
+            "P": { "max": 0.045, "basis": "heat" },
+            "S": { "max": 0.03, "basis": "heat" },
+            "Si": { "max": 0.75, "basis": "heat" },
+            "Cr": { "min": 17.5, "max": 19.5, "basis": "heat" },
+            "Ni": { "min": 8.0, "max": 10.5, "basis": "heat" },
+            "N": { "max": 0.1, "basis": "heat" }
+          }
+        }
+      ]
+    },
+    {
+      "specification": "ASTM A479/A479M",
+      "grade": "TP316",
+      "canonical_key": "ASTM_A479_TP316",
+      "aliases": [
+        "astm a479 tp316",
+        "a479 tp316",
+        "a479 316",
+        "a479-316",
+        "sa-479 tp316",
+        "sa479 tp316",
+        "asme sa-479 type 316"
+      ],
+      "clause_reference": "ASTM A479/A479M Tables 1 and 2",
+      "source": "Public specification summary",
+      "verified": false,
+      "requirements": [
+        {
+          "product_form": "bar",
+          "condition": "any",
+          "thickness_min_mm": null,
+          "thickness_max_mm": null,
+          "properties": {
+            "tensile_strength": { "min": 515, "max": null, "unit": "MPa" },
+            "yield_strength": { "min": 205, "max": null, "unit": "MPa" },
+            "elongation_50mm": { "min": 30, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "max": 0.08, "basis": "heat" },
+            "Mn": { "max": 2.0, "basis": "heat" },
+            "P": { "max": 0.045, "basis": "heat" },
+            "S": { "max": 0.03, "basis": "heat" },
+            "Si": { "max": 1.0, "basis": "heat" },
+            "Cr": { "min": 16.0, "max": 18.0, "basis": "heat" },
+            "Ni": { "min": 10.0, "max": 14.0, "basis": "heat" },
+            "Mo": { "min": 2.0, "max": 3.0, "basis": "heat" }
+          }
+        }
+      ]
+    },
+    {
+      "specification": "ASTM A193/A193M",
+      "grade": "B7",
+      "canonical_key": "ASTM_A193_B7",
+      "aliases": [
+        "astm a193 b7",
+        "astm a193 grade b7",
+        "a193 grade b7",
+        "a193 gr b7",
+        "a193 gr.b7",
+        "a193b7",
+        "a193-b7",
+        "sa-193 b7",
+        "sa193 gr b7",
+        "asme sa-193 grade b7"
+      ],
+      "clause_reference": "ASTM A193/A193M Tables 1 and 3",
+      "source": "Public specification summary",
+      "verified": false,
+      "requirements": [
+        {
+          "product_form": "bolting",
+          "condition": "quenched and tempered",
+          "thickness_min_mm": 0,
+          "thickness_max_mm": 64,
+          "properties": {
+            "tensile_strength": { "min": 860, "max": null, "unit": "MPa" },
+            "yield_strength": { "min": 720, "max": null, "unit": "MPa" },
+            "elongation_50mm": { "min": 16, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "min": 0.37, "max": 0.49, "basis": "heat" },
+            "Mn": { "min": 0.65, "max": 1.1, "basis": "heat" },
+            "P": { "max": 0.035, "basis": "heat" },
+            "S": { "max": 0.04, "basis": "heat" },
+            "Si": { "min": 0.15, "max": 0.35, "basis": "heat" },
+            "Cr": { "min": 0.75, "max": 1.2, "basis": "heat" },
+            "Mo": { "min": 0.15, "max": 0.25, "basis": "heat" }
+          }
+        },
+        {
+          "product_form": "bolting",
+          "condition": "quenched and tempered",
+          "thickness_min_mm": 64,
+          "thickness_max_mm": 102,
+          "properties": {
+            "tensile_strength": { "min": 795, "max": null, "unit": "MPa" },
+            "yield_strength": { "min": 655, "max": null, "unit": "MPa" },
+            "elongation_50mm": { "min": 16, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "min": 0.37, "max": 0.49, "basis": "heat" },
+            "Mn": { "min": 0.65, "max": 1.1, "basis": "heat" },
+            "P": { "max": 0.035, "basis": "heat" },
+            "S": { "max": 0.04, "basis": "heat" },
+            "Si": { "min": 0.15, "max": 0.35, "basis": "heat" },
+            "Cr": { "min": 0.75, "max": 1.2, "basis": "heat" },
+            "Mo": { "min": 0.15, "max": 0.25, "basis": "heat" }
+          }
+        },
+        {
+          "product_form": "bolting",
+          "condition": "quenched and tempered",
+          "thickness_min_mm": 102,
+          "thickness_max_mm": 178,
+          "properties": {
+            "tensile_strength": { "min": 690, "max": null, "unit": "MPa" },
+            "yield_strength": { "min": 515, "max": null, "unit": "MPa" },
+            "elongation_50mm": { "min": 18, "max": null, "unit": "%" }
+          },
+          "chemical": {
+            "C": { "min": 0.37, "max": 0.49, "basis": "heat" },
+            "Mn": { "min": 0.65, "max": 1.1, "basis": "heat" },
+            "P": { "max": 0.035, "basis": "heat" },
+            "S": { "max": 0.04, "basis": "heat" },
+            "Si": { "min": 0.15, "max": 0.35, "basis": "heat" },
+            "Cr": { "min": 0.75, "max": 1.2, "basis": "heat" },
+            "Mo": { "min": 0.15, "max": 0.25, "basis": "heat" }
+          }
+        }
+      ]
+    }
+  ]
+}
