@@ -67,11 +67,19 @@ an audit result.
 |---|---|---|
 | 1 | `engines/pdf_parser.py` | Done, tested |
 | 2 | `utils/prompts.py` | Done — needs real-MTC few-shots |
-| 3 | `engines/llm_client.py` | Blocked on model ID confirmation |
-| 4 | `knowledge_base/standards_loader.py` | Not started |
-| 5 | `engines/compliance_checker.py` | Not started |
-| 6 | `engines/doc_auditor.py` | Not started |
+| 3 | `engines/llm_client.py` | Done — live model ID unconfirmed |
+| 4 | `knowledge_base/standards_loader.py` | Done — 10 grades, all unverified |
+| 5 | `engines/compliance_checker.py` | Done, tested |
+| 6 | `engines/doc_auditor.py` | Done, tested |
 | 7 | Pipeline validation on real MTCs | Blocked — no sample documents |
+
+The pipeline runs end to end offline. 127 tests pass. To see it decide verdicts
+without credentials or sample files:
+
+```bash
+python -m scripts.audit_cli --demo     # built-in scenarios
+python -m scripts.audit_cli cert.pdf   # a real document
+```
 
 Backend AI pipeline first. No API layer, frontend or extension until step 7
 passes on real documents.
@@ -150,6 +158,55 @@ exceptions. Only an unopenable file raises.
 `ParsedDocument.has_text` is derived from per-page character counts, not from
 `full_text`, because `full_text` always contains the `=== PAGE n ===` markers.
 Testing the assembled string would report a blank scan as having content.
+
+### `knowledge_base/standards_loader.py`
+
+Resolves a material grade to its acceptance limits, deterministically.
+
+Limits are **qualified**, not flat. The same grade has different carbon maxima
+at different thicknesses and different strength minima at different diameters,
+so a `StandardEntry` holds several requirement blocks and the loader selects the
+one matching the certificate's product form and thickness. A grade whose limits
+vary by thickness, presented without a thickness, returns an error rather than a
+guessed band.
+
+Lookup is an alias table plus a spec/grade parser — `ASME SA-516 Gr.70`,
+`A516GR70` and `ASTM A516/A516M-17 Grade 70` all resolve to one entry. There is
+no fuzzy matching on this path: returning Grade 60 limits for a Grade 70
+certificate would let the arithmetic run perfectly and produce a confident wrong
+PASS.
+
+Every entry carries `source` and `verified`. All ten ship as `verified: false`
+until a qualified reviewer checks them, and that flag is surfaced on every
+verdict.
+
+### `engines/compliance_checker.py`
+
+Pure Python. Converts units, applies bounds, reports a delta and a clause per
+parameter. One FAIL fails the document; anything unresolved forces REVIEW.
+
+The interesting case is elongation, where codes set different minima for
+different gauge lengths and certificates do not always say which was measured.
+Rather than guess, the comparison brackets it: below every defined minimum is a
+FAIL, at or above every minimum is a PASS, and in between is a REVIEW — a
+verdict that cannot be wrong because of an unstated gauge length.
+
+Unreported chemistry is treated by what the code asks. An element with a
+specified minimum that is missing goes to review; a residual with only a maximum
+is recorded as not checked, because mills routinely omit those and flagging them
+would bury real findings.
+
+### `engines/doc_auditor.py`
+
+Orchestrates parse → extract → resolve → compare.
+
+Document problems and infrastructure problems are handled differently. An
+unreadable scan, an unparseable model response, an unknown grade or a missing
+thickness all return a REVIEW verdict carrying the reason, because that is the
+answer. A provider outage raises, because it says nothing about the certificate.
+
+A document that yields no text never reaches the model — no tokens are spent on
+a file that cannot be read.
 
 ### `utils/prompts.py`
 
