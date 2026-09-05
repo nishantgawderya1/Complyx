@@ -36,5 +36,6 @@ Thumbs.db
 # Local test documents (never commit client MTCs)
 sample_docs/
 eval_set/
+docs/
 *.pdf
 !docs/**/*.pdf
