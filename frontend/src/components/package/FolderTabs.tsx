@@ -1,3 +1,4 @@
+import { useLayoutEffect, useRef } from 'react';
 import {
   DOC_FORMAT,
   DOC_LABEL,
@@ -29,6 +30,23 @@ export function FolderTabs({
   const byType = new Map<DocType, SourceDocument>(
     documents.map((d) => [d.doc_type, d]),
   );
+
+  // Selecting a finding switches the active document, and the tab row scrolls
+  // horizontally -- so the tab for the document being shown can end up off
+  // screen. Follow it, or the header stops describing what is on the canvas.
+  // useLayoutEffect, not useEffect: on first paint the row has not been laid
+  // out when a plain effect fires, so the scroll is a no-op and the active tab
+  // stays clipped off the right edge. Instant rather than smooth -- this is a
+  // short horizontal correction, and animating it draws the eye to the tab row
+  // when the user is looking at the finding.
+  const selectedRef = useRef<HTMLButtonElement | null>(null);
+  useLayoutEffect(() => {
+    selectedRef.current?.scrollIntoView({
+      inline: 'nearest',
+      block: 'nearest',
+      behavior: 'auto',
+    });
+  }, [selectedId]);
 
   return (
     <div
@@ -65,6 +83,7 @@ export function FolderTabs({
         return (
           <button
             key={type}
+            ref={selected ? selectedRef : undefined}
             role="tab"
             aria-selected={selected}
             onClick={() => onSelect(document.id)}

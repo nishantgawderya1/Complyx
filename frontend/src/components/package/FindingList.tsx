@@ -37,9 +37,18 @@ export function FindingList({
 
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
-      // Never steal keys while the dismissal reason is being typed.
-      const tag = (event.target as HTMLElement)?.tagName;
-      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+      // Never steal keys while the dismissal reason is being typed -- but only
+      // for fields that actually take text. Guarding on tagName alone also
+      // catches the layer-toggle checkboxes, which keep focus after a click and
+      // would then silently kill keyboard review until the user clicked away.
+      const target = event.target as HTMLElement | null;
+      const tag = target?.tagName;
+      const type = (target as HTMLInputElement | null)?.type;
+      const typing =
+        tag === 'TEXTAREA' ||
+        target?.isContentEditable ||
+        (tag === 'INPUT' && type !== 'checkbox' && type !== 'radio');
+      if (typing) return;
       if (!sorted.length) return;
 
       const index = sorted.findIndex((f) => f.id === selectedId);

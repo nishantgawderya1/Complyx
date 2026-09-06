@@ -26,6 +26,13 @@ import { Mono } from '@/components/primitives/Text';
 
 const MARGIN_W = 190;
 
+// The page box. Notes are positioned as a percentage of page height, so the
+// margin column has to be given the same height explicitly -- a bare `relative`
+// container holding only absolute children collapses to zero height, and every
+// note then resolves `top: 65%` against 0 and stacks invisibly at the top.
+const PAGE_W = 680;
+const PAGE_H = 880;
+
 export interface CanvasProps {
   document: SourceDocument;
   page: number;
@@ -97,7 +104,7 @@ export function DocumentCanvas({
         <div
           className="relative mx-auto"
           style={{
-            width: `calc(${680 * zoom}px + ${MARGIN_W}px)`,
+            width: `calc(${PAGE_W * zoom}px + ${MARGIN_W}px)`,
             maxWidth: '100%',
           }}
         >
@@ -106,8 +113,8 @@ export function DocumentCanvas({
             <div
               className="relative shrink-0 border border-rule-strong bg-surface shadow-float"
               style={{
-                width: 680 * zoom,
-                aspectRatio: '680 / 880',
+                width: PAGE_W * zoom,
+                height: PAGE_H * zoom,
                 transform: `rotate(${rotation}deg)`,
                 transformOrigin: 'center',
               }}
@@ -164,6 +171,7 @@ export function DocumentCanvas({
             {showMarkup && (
               <MarginNotes
                 marks={marks}
+                height={PAGE_H * zoom}
                 selectedFindingId={selectedFindingId}
                 onSelectFinding={onSelectFinding}
               />
@@ -183,15 +191,17 @@ export function DocumentCanvas({
  */
 function MarginNotes({
   marks,
+  height,
   selectedFindingId,
   onSelectFinding,
 }: {
   marks: Mark[];
+  height: number;
   selectedFindingId: string | null;
   onSelectFinding: (id: string) => void;
 }) {
   return (
-    <div className="relative shrink-0" style={{ width: MARGIN_W }}>
+    <div className="relative shrink-0" style={{ width: MARGIN_W, height }}>
       {marks.map((mark) => {
         const selected = mark.finding.id === selectedFindingId;
         return (
@@ -268,12 +278,12 @@ function PagePlaceholder({ formatNo, page }: { formatNo: string; page: number })
           </span>
           <span className="font-mono text-2xs text-rule-strong">p{page}</span>
         </div>
-        <div className="flex-1 space-y-[7px] p-3">
-          {Array.from({ length: 22 }).map((_, i) => (
+        <div className="flex flex-1 flex-col justify-evenly p-3">
+          {Array.from({ length: 26 }).map((_, i) => (
             <div
               key={i}
               className="h-[6px] bg-rule"
-              style={{ width: `${[92, 71, 84, 58, 95, 66][i % 6]}%`, opacity: 0.55 }}
+              style={{ width: `${[92, 71, 84, 58, 95, 66][i % 6]}%`, opacity: 0.7 }}
             />
           ))}
         </div>
