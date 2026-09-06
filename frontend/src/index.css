@@ -1,0 +1,129 @@
+/**
+ * Complyx base styles.
+ *
+ * Fonts are self-hosted through @fontsource rather than loaded from the Google
+ * Fonts CDN. NPCIL and defence sites are air-gapped: a CDN font there does not
+ * fail loudly, it silently falls back to Arial -- and the monospace rule that
+ * makes TPL/GHAVP/W-71 distinguishable from TPL/GHAVP/W-72 would quietly stop
+ * applying. Self-hosting makes the typography a property of the build.
+ */
+
+/* Body and prose. */
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+/* Screen titles and section heads. */
+@import '@fontsource/ibm-plex-sans-condensed/500.css';
+@import '@fontsource/ibm-plex-sans-condensed/600.css';
+/* Every value, ID, code, date and measurement. */
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+@import '@fontsource/ibm-plex-mono/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans text-base;
+  }
+
+  /*
+   * Paper grain on the page ground. DESIGN.md caps this at 2% and says to
+   * remove it if it reads as an effect. It is a single inline SVG turbulence
+   * filter -- no image request, and nothing to load on an air-gapped site.
+   */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23g)'/%3E%3C/svg%3E");
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+
+  /*
+   * Keyboard navigation is a requirement, not a nicety: inspectors reviewing
+   * forty packages will not reach for a mouse. Focus must always be visible.
+   */
+  :focus-visible {
+    outline: 2px solid theme('colors.blueprint');
+    outline-offset: 1px;
+  }
+
+  ::selection {
+    background: theme('colors.blueprint-soft');
+  }
+}
+
+@layer components {
+  /*
+   * Uppercase letterspaced label. Form labels, table headers, metadata.
+   * DESIGN.md: IBM Plex Sans 500, uppercase, +0.06em, 11px.
+   */
+  .label {
+    @apply font-sans text-2xs font-medium uppercase tracking-label text-graphite;
+  }
+
+  /* A drawing title block: format number set in the corner of a panel. */
+  .titleblock {
+    @apply font-mono text-2xs uppercase tracking-block text-graphite;
+  }
+
+  /*
+   * Ruled table. Rules like a printed form, not floating cards with gaps.
+   */
+  .ruled {
+    @apply w-full border-collapse bg-surface text-sm;
+  }
+  .ruled thead th {
+    @apply label border-b border-rule-strong bg-paper px-3 py-2 text-left align-bottom whitespace-nowrap;
+  }
+  .ruled tbody td {
+    @apply border-b border-rule px-3 py-2 align-top;
+  }
+  .ruled tbody tr:last-child td {
+    @apply border-b-0;
+  }
+  .ruled tbody tr:hover td {
+    @apply bg-white;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * The package confirmation view gets printed and filed. Drop the chrome.
+ */
+@media print {
+  body::before {
+    display: none;
+  }
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}
