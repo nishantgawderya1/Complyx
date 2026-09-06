@@ -33,9 +33,18 @@ extension/dist/
 .DS_Store
 Thumbs.db
 
-# Local test documents (never commit client MTCs)
+# Real documents -- never commit a client MTC, a welder package, a crop of one,
+# or a photograph. The sample packages carry welder photographs, full names, ID
+# numbers and signatures from an operating nuclear site. The ASME Section IX PDF
+# is copyrighted: read it to build rule tables, never commit it.
+# Once a photograph is in git history, removing it means rewriting history.
+fixtures/
 sample_docs/
 eval_set/
 docs/
 *.pdf
-!docs/**/*.pdf
+
+# The only PDFs that may ever be committed are generated in-process by the test
+# suite. Nothing under fixtures/ or docs/ can be re-included: git does not
+# descend into an excluded directory, so a negation there would be inert anyway.
+!backend/tests/fixtures/generated/*.pdf

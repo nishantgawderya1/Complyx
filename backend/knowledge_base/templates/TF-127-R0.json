@@ -1,0 +1,546 @@
+{
+  "canonical_key": "TF-127-R0",
+  "form_type": "id_card",
+  "format_no": "NPCIL/QMD/TF-127",
+  "format_rev": "R0",
+  "title": "Welder Identity Card",
+  "template_version": "TF-127-R0/1",
+  "landscape": false,
+  "signature_tokens": [
+    "WELDER IDENTITY CARD",
+    "VALIDITY",
+    "BACK SIDE"
+  ],
+  "verified": false,
+  "verified_by": null,
+  "verified_date": null,
+  "source": "Regions measured from the two NPCIL GHAVP-1&2 identity cards in the sample package (welders TPL/GHAVP/W-71 and W-72).",
+  "notes": "One PDF page carries BOTH card faces: the front occupies roughly the top half and the back side the bottom half, each with its own 'Format No.' footer. That is why every front-face anchor pins occurrence 0 and the back-face anchors sit in an explicit search_band -- 'WELDER ID NO.' appears on both faces and an unqualified match would land on the wrong one. Column headers on the back-face table overlap in the OCR text layer (Process/P.No and Position resolve to nearly the same x span), so those two columns are marked required=false until confirmed against a clean scan.",
+  "fields": [
+    {
+      "name": "project",
+      "description": "Project the welder is qualified on.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.14,
+          "y0": 0.105,
+          "x1": 0.66,
+          "y1": 0.15
+        },
+        "x_anchor": {
+          "text": "Project",
+          "occurrence": 0
+        },
+        "x_mode": "right_of",
+        "x_width": 0.48,
+        "y_anchor": {
+          "text": "Project",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_height": 0.024
+      }
+    },
+    {
+      "name": "client",
+      "description": "Client organisation.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.13,
+          "y0": 0.128,
+          "x1": 0.66,
+          "y1": 0.175
+        },
+        "x_anchor": {
+          "text": "Client",
+          "occurrence": 0
+        },
+        "x_mode": "right_of",
+        "x_width": 0.48,
+        "y_anchor": {
+          "text": "Client",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_height": 0.024
+      }
+    },
+    {
+      "name": "work_order_no",
+      "description": "Tata Projects work order number.",
+      "value_kind": "text",
+      "required": false,
+      "region": {
+        "rect": {
+          "x0": 0.14,
+          "y0": 0.15,
+          "x1": 0.62,
+          "y1": 0.198
+        },
+        "x_anchor": {
+          "text": "W.O. no",
+          "alternates": [
+            "W.O. no."
+          ],
+          "occurrence": 0
+        },
+        "x_mode": "right_of",
+        "x_width": 0.45,
+        "y_anchor": {
+          "text": "W.O. no",
+          "alternates": [
+            "W.O. no."
+          ],
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_height": 0.026
+      }
+    },
+    {
+      "name": "welder_name",
+      "description": "Welder name as printed on the card front. Reconciled against all five other documents in the package.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.21,
+          "y0": 0.18,
+          "x1": 0.7,
+          "y1": 0.24
+        },
+        "x_anchor": {
+          "text": "WELDER NAME",
+          "occurrence": 0
+        },
+        "x_mode": "right_of",
+        "x_width": 0.45,
+        "y_anchor": {
+          "text": "WELDER NAME",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_height": 0.026
+      }
+    },
+    {
+      "name": "welder_id",
+      "description": "Welder ID number, front face. Printed again on the back face.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.19,
+          "y0": 0.212,
+          "x1": 0.66,
+          "y1": 0.272
+        },
+        "x_anchor": {
+          "text": "WELDER ID NO",
+          "alternates": [
+            "WELDER ID NO."
+          ],
+          "occurrence": 0
+        },
+        "x_mode": "right_of",
+        "x_width": 0.45,
+        "y_anchor": {
+          "text": "WELDER ID NO",
+          "alternates": [
+            "WELDER ID NO."
+          ],
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_height": 0.028
+      }
+    },
+    {
+      "name": "welding_process",
+      "description": "Process the card qualifies, e.g. SMAW.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.25,
+          "y0": 0.243,
+          "x1": 0.62,
+          "y1": 0.302
+        },
+        "x_anchor": {
+          "text": "WELDING PROCESS",
+          "occurrence": 0
+        },
+        "x_mode": "right_of",
+        "x_width": 0.35,
+        "y_anchor": {
+          "text": "WELDING PROCESS",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_height": 0.026
+      }
+    },
+    {
+      "name": "validity",
+      "description": "Validity statement. Feeds continuity tracking (QW-322) later.",
+      "value_kind": "text",
+      "required": false,
+      "region": {
+        "rect": {
+          "x0": 0.16,
+          "y0": 0.272,
+          "x1": 0.85,
+          "y1": 0.335
+        },
+        "x_anchor": {
+          "text": "VALIDITY",
+          "occurrence": 0
+        },
+        "x_mode": "right_of",
+        "x_width": 0.62,
+        "y_anchor": {
+          "text": "VALIDITY",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_height": 0.026
+      }
+    },
+    {
+      "name": "welder_id_back",
+      "description": "Welder ID repeated on the back face. Must equal welder_id -- an intra-document reconciliation check that needs no code knowledge.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.75,
+          "y0": 0.505,
+          "x1": 1.0,
+          "y1": 0.58
+        },
+        "x_anchor": {
+          "text": "WELDER ID NO",
+          "alternates": [
+            "WELDER ID NO."
+          ],
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.0,
+            "y0": 0.48,
+            "x1": 1.0,
+            "y1": 0.62
+          }
+        },
+        "x_mode": "right_of",
+        "x_width": 0.22,
+        "y_anchor": {
+          "text": "WELDER ID NO",
+          "alternates": [
+            "WELDER ID NO."
+          ],
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.0,
+            "y0": 0.48,
+            "x1": 1.0,
+            "y1": 0.62
+          }
+        },
+        "y_mode": "same_row",
+        "y_height": 0.022
+      }
+    },
+    {
+      "name": "date_of_test",
+      "description": "Date of the qualification test, back-face table row 1. Anchors the package date ordering check.",
+      "value_kind": "date",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.1,
+          "y0": 0.6,
+          "x1": 0.26,
+          "y1": 0.7
+        },
+        "x_anchor": {
+          "text": "Date of test",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.0,
+            "y0": 0.53,
+            "x1": 0.4,
+            "y1": 0.66
+          }
+        },
+        "x_mode": "align",
+        "x_width": 0.12,
+        "y_anchor": {
+          "text": "Date of test",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.0,
+            "y0": 0.53,
+            "x1": 0.4,
+            "y1": 0.66
+          }
+        },
+        "y_mode": "below",
+        "y_offset": 0.022,
+        "y_height": 0.05
+      }
+    },
+    {
+      "name": "process_p_no",
+      "description": "Process and P-number range, back-face table. Column header overlaps 'Position' in the OCR text layer, so the region is provisional.",
+      "value_kind": "text",
+      "required": false,
+      "region": {
+        "rect": {
+          "x0": 0.21,
+          "y0": 0.6,
+          "x1": 0.35,
+          "y1": 0.7
+        },
+        "x_anchor": {
+          "text": "Process/P. No",
+          "alternates": [
+            "Process/P. No.",
+            "Process/P."
+          ],
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.1,
+            "y0": 0.53,
+            "x1": 0.45,
+            "y1": 0.66
+          }
+        },
+        "x_mode": "align",
+        "x_width": 0.12,
+        "y_anchor": {
+          "text": "Date of test",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.0,
+            "y0": 0.53,
+            "x1": 0.4,
+            "y1": 0.66
+          }
+        },
+        "y_mode": "below",
+        "y_offset": 0.022,
+        "y_height": 0.05
+      }
+    },
+    {
+      "name": "filler_metal",
+      "description": "Filler metal classification, e.g. E-7018.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.33,
+          "y0": 0.6,
+          "x1": 0.44,
+          "y1": 0.7
+        },
+        "x_anchor": {
+          "text": "Filler Metal",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.335,
+            "y0": 0.53,
+            "x1": 0.5,
+            "y1": 0.66
+          }
+        },
+        "x_mode": "align",
+        "x_width": 0.06,
+        "y_anchor": {
+          "text": "Date of test",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.0,
+            "y0": 0.53,
+            "x1": 0.4,
+            "y1": 0.66
+          }
+        },
+        "y_mode": "below",
+        "y_offset": 0.022,
+        "y_height": 0.05,
+        "x_offset": -0.008
+      }
+    },
+    {
+      "name": "qualified_range_pipe",
+      "description": "Qualified pipe range carried to the field. Derived on the WPQR under QW-461.9; this card must repeat it unchanged.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.4,
+          "y0": 0.6,
+          "x1": 0.55,
+          "y1": 0.71
+        },
+        "x_anchor": {
+          "text": "Pipe",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.38,
+            "y0": 0.55,
+            "x1": 0.54,
+            "y1": 0.63
+          }
+        },
+        "x_mode": "align",
+        "x_width": 0.095,
+        "y_anchor": {
+          "text": "Date of test",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.0,
+            "y0": 0.53,
+            "x1": 0.4,
+            "y1": 0.66
+          }
+        },
+        "y_mode": "below",
+        "y_offset": 0.022,
+        "y_height": 0.055,
+        "x_offset": -0.03
+      }
+    },
+    {
+      "name": "qualified_range_plate",
+      "description": "Qualified plate range carried to the field.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.51,
+          "y0": 0.6,
+          "x1": 0.64,
+          "y1": 0.71
+        },
+        "x_anchor": {
+          "text": "Plate",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.5,
+            "y0": 0.55,
+            "x1": 0.64,
+            "y1": 0.63
+          }
+        },
+        "x_mode": "align",
+        "x_width": 0.07,
+        "y_anchor": {
+          "text": "Date of test",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.0,
+            "y0": 0.53,
+            "x1": 0.4,
+            "y1": 0.66
+          }
+        },
+        "y_mode": "below",
+        "y_offset": 0.022,
+        "y_height": 0.055,
+        "x_offset": -0.008
+      }
+    },
+    {
+      "name": "qualified_thickness",
+      "description": "Qualified thickness in mm. 'MAX. to be Welded' when the WPQR's 3-layer checkbox is Yes -- the value that box decides.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.6,
+          "y0": 0.6,
+          "x1": 0.74,
+          "y1": 0.71
+        },
+        "x_anchor": {
+          "text": "Thk. In",
+          "alternates": [
+            "Thk. In mm",
+            "Thk."
+          ],
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.58,
+            "y0": 0.55,
+            "x1": 0.76,
+            "y1": 0.64
+          }
+        },
+        "x_mode": "align",
+        "x_width": 0.075,
+        "y_anchor": {
+          "text": "Date of test",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.0,
+            "y0": 0.53,
+            "x1": 0.4,
+            "y1": 0.66
+          }
+        },
+        "y_mode": "below",
+        "y_offset": 0.022,
+        "y_height": 0.055,
+        "x_offset": -0.005
+      }
+    },
+    {
+      "name": "coupon_no",
+      "description": "Coupon number (WQT-xxx) in the Remarks column. Groups this card into its package; must match the WPQR record number.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.84,
+          "y0": 0.6,
+          "x1": 1.0,
+          "y1": 0.7
+        },
+        "x_anchor": {
+          "text": "Remarks",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.8,
+            "y0": 0.55,
+            "x1": 1.0,
+            "y1": 0.64
+          }
+        },
+        "x_mode": "align",
+        "x_width": 0.1,
+        "y_anchor": {
+          "text": "Date of test",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.0,
+            "y0": 0.53,
+            "x1": 0.4,
+            "y1": 0.66
+          }
+        },
+        "y_mode": "below",
+        "y_offset": 0.01,
+        "y_height": 0.045,
+        "x_offset": -0.02
+      }
+    }
+  ],
+  "checkboxes": []
+}

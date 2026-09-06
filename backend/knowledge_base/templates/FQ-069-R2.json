@@ -1,0 +1,916 @@
+{
+  "canonical_key": "FQ-069-R2",
+  "form_type": "wpqr",
+  "format_no": "FQ/069",
+  "format_rev": "2",
+  "title": "Welder and Welding Operator Performance Qualification Record (QW-484)",
+  "template_version": "FQ-069-R2/1",
+  "landscape": false,
+  "signature_tokens": [
+    "WELDER AND WELDING OPERATOR PERFORMANCE QUALIFICATION RECORD",
+    "Actual Values",
+    "Qualified Range",
+    "QW-484"
+  ],
+  "verified": false,
+  "verified_by": null,
+  "verified_date": null,
+  "source": "Regions measured from the two WPQRs in the sample package (WQT-138 and WQT-139, NPCIL GHAVP-1&2).",
+  "notes": "This is the deliverable form and the hardest layout. Every QW-350 welding variable appears TWICE on one row: an Actual Value transcribed from the raw documents, and a Qualified Range *derived* from it by Section IX rules. The flat text layer interleaves the two columns beyond recovery -- dumping page 1 as text yields the labels first and then both columns' values jumbled together -- so each cell is located by intersecting the column-header anchor (x) with the row-label anchor (y). That intersection is the column association the text stream destroys, and it is why RegionSpec carries independent x and y anchors. Not yet mapped: 'Laboratory test no.' (needed by the Class 1 check that the lab report number cited here matches the actual Star Wire report) and the signature blocks. Both need offsets measured before they can be added honestly.",
+  "fields": [
+    {
+      "name": "coupon_no",
+      "description": "Record No, the coupon number (WQT-xxx). Groups the whole package.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.52,
+          "y0": 0.1,
+          "x1": 0.8,
+          "y1": 0.142
+        },
+        "x_anchor": {
+          "text": "Record No",
+          "alternates": [
+            "Record No:"
+          ],
+          "occurrence": 0
+        },
+        "x_mode": "right_of",
+        "x_offset": 0.05,
+        "x_width": 0.18,
+        "y_anchor": {
+          "text": "Record No",
+          "alternates": [
+            "Record No:"
+          ],
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.005,
+        "y_height": 0.02
+      }
+    },
+    {
+      "name": "exam_date",
+      "description": "Examination date. Must fall between the weld date and the ID card date.",
+      "value_kind": "date",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.52,
+          "y0": 0.115,
+          "x1": 0.8,
+          "y1": 0.155
+        },
+        "x_anchor": {
+          "text": "Exam. Date",
+          "alternates": [
+            "Exam. Date:"
+          ],
+          "occurrence": 0
+        },
+        "x_mode": "right_of",
+        "x_offset": 0.05,
+        "x_width": 0.18,
+        "y_anchor": {
+          "text": "Exam. Date",
+          "alternates": [
+            "Exam. Date:"
+          ],
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.004,
+        "y_height": 0.018
+      }
+    },
+    {
+      "name": "welder_name",
+      "description": "Welder name. The Class 1 reconciliation check compares this across all six documents.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.22,
+          "y0": 0.135,
+          "x1": 0.56,
+          "y1": 0.175
+        },
+        "x_anchor": {
+          "text": "Welder's Name",
+          "occurrence": 0
+        },
+        "x_mode": "right_of",
+        "x_offset": 0.025,
+        "x_width": 0.28,
+        "y_anchor": {
+          "text": "Welder's Name",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.004,
+        "y_height": 0.02
+      }
+    },
+    {
+      "name": "welder_id",
+      "description": "Welder ID number, same row as the name but in the right-hand cell.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.62,
+          "y0": 0.135,
+          "x1": 0.97,
+          "y1": 0.18
+        },
+        "x_anchor": {
+          "text": "Welder's Name",
+          "occurrence": 0
+        },
+        "x_mode": "right_of",
+        "x_offset": 0.435,
+        "x_width": 0.28,
+        "y_anchor": {
+          "text": "Welder's Name",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.004,
+        "y_height": 0.02
+      }
+    },
+    {
+      "name": "wps_no",
+      "description": "WPS the coupon was welded to. Must match the Weld Data Record and requisition.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.28,
+          "y0": 0.17,
+          "x1": 0.58,
+          "y1": 0.205
+        },
+        "x_anchor": {
+          "text": "Identification of NPS followed",
+          "alternates": [
+            "Identification of WPS followed",
+            "ldentification of WPS followed",
+            "followed"
+          ],
+          "occurrence": 0
+        },
+        "x_mode": "right_of",
+        "x_offset": 0.015,
+        "x_width": 0.26,
+        "y_anchor": {
+          "text": "Identification of NPS followed",
+          "alternates": [
+            "Identification of WPS followed",
+            "ldentification of WPS followed",
+            "followed"
+          ],
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.006,
+        "y_height": 0.022
+      }
+    },
+    {
+      "name": "base_metal_spec",
+      "description": "Base metal specification, e.g. IS 2062 E250 Gr. BR.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.28,
+          "y0": 0.198,
+          "x1": 0.56,
+          "y1": 0.232
+        },
+        "x_anchor": {
+          "text": "Specification of base metal",
+          "alternates": [
+            "Specification of base"
+          ],
+          "occurrence": 0
+        },
+        "x_mode": "right_of",
+        "x_offset": 0.025,
+        "x_width": 0.255,
+        "y_anchor": {
+          "text": "Specification of base metal",
+          "alternates": [
+            "Specification of base"
+          ],
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": 0.002,
+        "y_height": 0.02
+      }
+    },
+    {
+      "name": "welding_process_actual",
+      "description": "QW-350 welding process, as welded.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.54,
+          "y0": 0.25,
+          "x1": 0.71,
+          "y1": 0.28
+        },
+        "x_anchor": {
+          "text": "Actual Values",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.03,
+        "x_width": 0.165,
+        "y_anchor": {
+          "text": "Welding process",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.002,
+        "y_height": 0.012
+      }
+    },
+    {
+      "name": "welding_process_qualified",
+      "description": "QW-350 welding process, qualified range. Derived, not copied.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.71,
+          "y0": 0.25,
+          "x1": 0.96,
+          "y1": 0.28
+        },
+        "x_anchor": {
+          "text": "Qualified Range",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.045,
+        "x_width": 0.235,
+        "y_anchor": {
+          "text": "Welding process",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.002,
+        "y_height": 0.012
+      }
+    },
+    {
+      "name": "weld_type_actual",
+      "description": "Type: manual, semi-automatic, machine.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.54,
+          "y0": 0.262,
+          "x1": 0.71,
+          "y1": 0.292
+        },
+        "x_anchor": {
+          "text": "Actual Values",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.03,
+        "x_width": 0.165,
+        "y_anchor": {
+          "text": "Type (ie; manual",
+          "alternates": [
+            "Type (ie;"
+          ],
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.002,
+        "y_height": 0.012
+      }
+    },
+    {
+      "name": "weld_type_qualified",
+      "description": "Type, qualified range.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.71,
+          "y0": 0.262,
+          "x1": 0.96,
+          "y1": 0.292
+        },
+        "x_anchor": {
+          "text": "Qualified Range",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.045,
+        "x_width": 0.235,
+        "y_anchor": {
+          "text": "Type (ie; manual",
+          "alternates": [
+            "Type (ie;"
+          ],
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.002,
+        "y_height": 0.012
+      }
+    },
+    {
+      "name": "backing_actual",
+      "description": "Backing as welded. QW-402.4: welded without backing qualifies with and without.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.54,
+          "y0": 0.276,
+          "x1": 0.71,
+          "y1": 0.312
+        },
+        "x_anchor": {
+          "text": "Actual Values",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.03,
+        "x_width": 0.165,
+        "y_anchor": {
+          "text": "Backing (metal",
+          "alternates": [
+            "Backing (metal,"
+          ],
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.0,
+            "y0": 0.26,
+            "x1": 0.52,
+            "y1": 0.36
+          }
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.01,
+        "y_height": 0.026
+      }
+    },
+    {
+      "name": "backing_qualified",
+      "description": "Backing, qualified range. Derived under QW-402.4.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.71,
+          "y0": 0.276,
+          "x1": 0.96,
+          "y1": 0.312
+        },
+        "x_anchor": {
+          "text": "Qualified Range",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.045,
+        "x_width": 0.235,
+        "y_anchor": {
+          "text": "Backing (metal",
+          "alternates": [
+            "Backing (metal,"
+          ],
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.0,
+            "y0": 0.26,
+            "x1": 0.52,
+            "y1": 0.36
+          }
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.01,
+        "y_height": 0.026
+      }
+    },
+    {
+      "name": "base_metal_p_number_actual",
+      "description": "Base metal P-number as welded, e.g. P1 to P1.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.54,
+          "y0": 0.33,
+          "x1": 0.71,
+          "y1": 0.36
+        },
+        "x_anchor": {
+          "text": "Actual Values",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.03,
+        "x_width": 0.165,
+        "y_anchor": {
+          "text": "Base metal P- or S- Number",
+          "alternates": [
+            "Base metal P- or S-"
+          ],
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.002,
+        "y_height": 0.012
+      }
+    },
+    {
+      "name": "base_metal_p_number_qualified",
+      "description": "P-number qualified range. QW-423.1: P1 to P1 qualifies P1 through P15F.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.71,
+          "y0": 0.328,
+          "x1": 0.96,
+          "y1": 0.36
+        },
+        "x_anchor": {
+          "text": "Qualified Range",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.045,
+        "x_width": 0.235,
+        "y_anchor": {
+          "text": "Base metal P- or S- Number",
+          "alternates": [
+            "Base metal P- or S-"
+          ],
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.002,
+        "y_height": 0.012
+      }
+    },
+    {
+      "name": "filler_f_number_actual",
+      "description": "Filler metal F-number as welded, e.g. F4 for E7018.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.54,
+          "y0": 0.38,
+          "x1": 0.71,
+          "y1": 0.41
+        },
+        "x_anchor": {
+          "text": "Actual Values",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.03,
+        "x_width": 0.165,
+        "y_anchor": {
+          "text": "Filler metal F-number",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.01,
+        "y_height": 0.032
+      }
+    },
+    {
+      "name": "filler_f_number_qualified",
+      "description": "F-number qualified range. QW-433: F4 qualifies F4 with and without backing, plus F3, F2, F1 with backing. Two printed lines, so the region is taller.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.71,
+          "y0": 0.374,
+          "x1": 0.96,
+          "y1": 0.414
+        },
+        "x_anchor": {
+          "text": "Qualified Range",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.045,
+        "x_width": 0.235,
+        "y_anchor": {
+          "text": "Filler metal F-number",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.01,
+        "y_height": 0.032
+      }
+    },
+    {
+      "name": "deposit_thickness_actual",
+      "description": "Deposit thickness for process 1, as welded.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.54,
+          "y0": 0.436,
+          "x1": 0.71,
+          "y1": 0.466
+        },
+        "x_anchor": {
+          "text": "Actual Values",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.03,
+        "x_width": 0.165,
+        "y_anchor": {
+          "text": "Process 1.",
+          "alternates": [
+            "Process 1"
+          ],
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.002,
+        "y_height": 0.012
+      }
+    },
+    {
+      "name": "deposit_thickness_qualified",
+      "description": "Thickness qualified range. QW-452.1(b): with 3 or more layers this reads 'Max. to be welded'; without, it is limited to 2t. This cell is what the 3-layer checkbox decides.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.71,
+          "y0": 0.436,
+          "x1": 0.96,
+          "y1": 0.466
+        },
+        "x_anchor": {
+          "text": "Qualified Range",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.045,
+        "x_width": 0.235,
+        "y_anchor": {
+          "text": "Process 1.",
+          "alternates": [
+            "Process 1"
+          ],
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.002,
+        "y_height": 0.012
+      }
+    },
+    {
+      "name": "position_qualified_actual",
+      "description": "Position welded, e.g. 3G.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.54,
+          "y0": 0.474,
+          "x1": 0.71,
+          "y1": 0.504
+        },
+        "x_anchor": {
+          "text": "Actual Values",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.03,
+        "x_width": 0.165,
+        "y_anchor": {
+          "text": "Position qualified",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.002,
+        "y_height": 0.012
+      }
+    },
+    {
+      "name": "position_qualified_range",
+      "description": "Position qualified range. QW-461.9: 3G groove on plate qualifies plate and pipe over 610mm OD in F and V, pipe 73-610mm OD in F, fillet F/H/V. Spans several printed lines.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.71,
+          "y0": 0.47,
+          "x1": 0.96,
+          "y1": 0.516
+        },
+        "x_anchor": {
+          "text": "Qualified Range",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.045,
+        "x_width": 0.235,
+        "y_anchor": {
+          "text": "Position qualified",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.006,
+        "y_height": 0.036
+      }
+    },
+    {
+      "name": "vertical_progression_actual",
+      "description": "Vertical progression as welded: uphill or downhill.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.54,
+          "y0": 0.498,
+          "x1": 0.71,
+          "y1": 0.526
+        },
+        "x_anchor": {
+          "text": "Actual Values",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.03,
+        "x_width": 0.165,
+        "y_anchor": {
+          "text": "Vertical progression",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.002,
+        "y_height": 0.012
+      }
+    },
+    {
+      "name": "vertical_progression_qualified",
+      "description": "Progression qualified range. QW-405.3: uphill qualifies uphill only.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.71,
+          "y0": 0.498,
+          "x1": 0.96,
+          "y1": 0.526
+        },
+        "x_anchor": {
+          "text": "Qualified Range",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.045,
+        "x_width": 0.235,
+        "y_anchor": {
+          "text": "Vertical progression",
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.002,
+        "y_height": 0.012
+      }
+    },
+    {
+      "name": "current_polarity_actual",
+      "description": "Current type and polarity as welded, e.g. DCEP.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.54,
+          "y0": 0.54,
+          "x1": 0.71,
+          "y1": 0.568
+        },
+        "x_anchor": {
+          "text": "Actual Values",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.03,
+        "x_width": 0.165,
+        "y_anchor": {
+          "text": "SMAW current",
+          "alternates": [
+            "SMAW current type"
+          ],
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.002,
+        "y_height": 0.012
+      }
+    },
+    {
+      "name": "current_polarity_qualified",
+      "description": "Current and polarity qualified range.",
+      "value_kind": "text",
+      "required": true,
+      "region": {
+        "rect": {
+          "x0": 0.71,
+          "y0": 0.54,
+          "x1": 0.96,
+          "y1": 0.568
+        },
+        "x_anchor": {
+          "text": "Qualified Range",
+          "occurrence": 0
+        },
+        "x_mode": "align",
+        "x_offset": -0.045,
+        "x_width": 0.235,
+        "y_anchor": {
+          "text": "SMAW current",
+          "alternates": [
+            "SMAW current type"
+          ],
+          "occurrence": 0
+        },
+        "y_mode": "same_row",
+        "y_offset": -0.002,
+        "y_height": 0.012
+      }
+    }
+  ],
+  "checkboxes": [
+    {
+      "name": "three_layers_minimum_process_1",
+      "clause_ref": "QW-452.1(b)",
+      "description": "The single most consequential mark on the form. Yes -> the thickness qualified range reads 'Max. to be welded'; No -> it is limited to 2t. Not text, so it is read by OpenCV ink density AND by a vision model, and any disagreement routes to REVIEW rather than being resolved.",
+      "yes_region": {
+        "rect": {
+          "x0": 0.398,
+          "y0": 0.434,
+          "x1": 0.436,
+          "y1": 0.46
+        },
+        "x_anchor": {
+          "text": "3 layers minimum",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.2,
+            "y0": 0.425,
+            "x1": 0.55,
+            "y1": 0.452
+          }
+        },
+        "x_mode": "right_of",
+        "x_offset": 0.0,
+        "x_width": 0.032,
+        "y_anchor": {
+          "text": "3 layers minimum",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.2,
+            "y0": 0.425,
+            "x1": 0.55,
+            "y1": 0.452
+          }
+        },
+        "y_mode": "same_row",
+        "y_offset": 0.0015,
+        "y_height": 0.0145,
+        "pad": 0.0015
+      },
+      "no_region": {
+        "rect": {
+          "x0": 0.452,
+          "y0": 0.434,
+          "x1": 0.49,
+          "y1": 0.46
+        },
+        "x_anchor": {
+          "text": "3 layers minimum",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.2,
+            "y0": 0.425,
+            "x1": 0.55,
+            "y1": 0.452
+          }
+        },
+        "x_mode": "right_of",
+        "x_offset": 0.052,
+        "x_width": 0.032,
+        "y_anchor": {
+          "text": "3 layers minimum",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.2,
+            "y0": 0.425,
+            "x1": 0.55,
+            "y1": 0.452
+          }
+        },
+        "y_mode": "same_row",
+        "y_offset": 0.0015,
+        "y_height": 0.0145,
+        "pad": 0.0015
+      }
+    },
+    {
+      "name": "three_layers_minimum_process_2",
+      "clause_ref": "QW-452.1(b)",
+      "description": "Same checkbox for a second process. Unmarked on both sample WPQRs, which is correct for a single-process qualification -- but 'both boxes blank' and 'both boxes ticked' must both route to REVIEW rather than defaulting.",
+      "yes_region": {
+        "rect": {
+          "x0": 0.398,
+          "y0": 0.451,
+          "x1": 0.436,
+          "y1": 0.475
+        },
+        "x_anchor": {
+          "text": "3 layers minimum",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.2,
+            "y0": 0.452,
+            "x1": 0.55,
+            "y1": 0.478
+          }
+        },
+        "x_mode": "right_of",
+        "x_offset": 0.0,
+        "x_width": 0.032,
+        "y_anchor": {
+          "text": "3 layers minimum",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.2,
+            "y0": 0.452,
+            "x1": 0.55,
+            "y1": 0.478
+          }
+        },
+        "y_mode": "same_row",
+        "y_offset": 0.0025,
+        "y_height": 0.0145,
+        "pad": 0.0015
+      },
+      "no_region": {
+        "rect": {
+          "x0": 0.452,
+          "y0": 0.451,
+          "x1": 0.49,
+          "y1": 0.475
+        },
+        "x_anchor": {
+          "text": "3 layers minimum",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.2,
+            "y0": 0.452,
+            "x1": 0.55,
+            "y1": 0.478
+          }
+        },
+        "x_mode": "right_of",
+        "x_offset": 0.052,
+        "x_width": 0.032,
+        "y_anchor": {
+          "text": "3 layers minimum",
+          "occurrence": 0,
+          "search_band": {
+            "x0": 0.2,
+            "y0": 0.452,
+            "x1": 0.55,
+            "y1": 0.478
+          }
+        },
+        "y_mode": "same_row",
+        "y_offset": 0.0025,
+        "y_height": 0.0145,
+        "pad": 0.0015
+      }
+    }
+  ]
+}
