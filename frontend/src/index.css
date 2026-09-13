@@ -127,3 +127,25 @@
     background: #fff;
   }
 }
+
+/*
+ * The issued record is printed and filed, so the draft watermark must survive
+ * printing. A generated qualification record that prints looking final before a
+ * qualified person has signed it is the exact failure this product exists to
+ * prevent -- so colour-adjust is forced on rather than left to the browser's
+ * "background graphics" checkbox.
+ */
+@media print {
+  @page {
+    margin: 12mm;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  /* The shell chrome is not part of the record. */
+  nav[aria-label='Progress'],
+  aside {
+    display: none !important;
+  }
+}

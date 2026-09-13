@@ -14,11 +14,12 @@ import { NavLink } from 'react-router-dom';
 
 const GROUPS: { heading: string; items: { to: string; label: string }[] }[] = [
   {
+    heading: 'Build',
+    items: [{ to: '/', label: 'New WPQR' }],
+  },
+  {
     heading: 'Review',
-    items: [
-      { to: '/', label: 'Worklist' },
-      { to: '/intake', label: 'New package' },
-    ],
+    items: [{ to: '/packages', label: 'Package worklist' }],
   },
   {
     heading: 'Lookup',

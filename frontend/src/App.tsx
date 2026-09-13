@@ -4,14 +4,19 @@ import { Worklist } from '@/screens/Worklist';
 import { PackageDetail } from '@/screens/PackageDetail';
 import { CheckboxReview } from '@/screens/CheckboxReview';
 import { Stub } from '@/screens/Stub';
+import { WpqrFlow } from '@/screens/wpqr/WpqrFlow';
 
 /**
  * Routes.
  *
- * Built: the review loop (worklist -> package detail -> reconciliation ->
- * derivation) and checkbox review. Those are the screens DESIGN.md identifies
- * as the home view, the central working screen, the most persuasive demo, and
- * the case that matters most.
+ * The home route is the WPQR build flow: upload three source documents, check
+ * they agree, derive the qualified range under Section IX, sign it off. That is
+ * the job.
+ *
+ * The package review loop (worklist -> package detail -> reconciliation) moved
+ * to /packages. It is a real screen set but it serves a product that needs
+ * persistence and a queue of stored packages, neither of which exists — so it
+ * is no longer the front door.
  *
  * The rest are stubs that state what belongs there and what blocks them, rather
  * than mocks that would suggest more exists than does.
@@ -20,7 +25,9 @@ export default function App() {
   return (
     <AppShell>
       <Routes>
-        <Route path="/" element={<Worklist />} />
+        {/* The product: three sources in, one signed WPQR out. */}
+        <Route path="/" element={<WpqrFlow />} />
+        <Route path="/packages" element={<Worklist />} />
         <Route path="/package/:id" element={<PackageDetail />} />
         <Route path="/package/:id/checkbox/:checkboxId" element={<CheckboxReview />} />
         <Route path="/checkbox-review" element={<CheckboxReview />} />
