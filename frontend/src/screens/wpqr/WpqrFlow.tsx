@@ -61,6 +61,20 @@ const SIMULATED: { match: RegExp; slot: SourceSlot; key: string; raw: string }[]
 
 export function WpqrFlow() {
   const [step, setStep] = useState<Step>(0);
+  /**
+   * The furthest step reached, which is what gates navigation -- not the
+   * current step. Gating on `step` alone makes the route card a one-way trap:
+   * an inspector who clicks back to re-check a source document finds the later
+   * steps disabled and has to re-walk the whole flow to return to the row they
+   * were signing. Going back to look at something is the most ordinary thing
+   * they do.
+   */
+  const [furthest, setFurthest] = useState<Step>(0);
+
+  function goto(next: Step) {
+    setStep(next);
+    setFurthest((f) => (next > f ? next : f));
+  }
   const [files, setFiles] = useState<UploadedFile[]>([]);
   const [draft, setDraft] = useState<WpqrDraft>(DRAFT);
 
@@ -185,8 +199,8 @@ export function WpqrFlow() {
               <button
                 key={s.n}
                 type="button"
-                disabled={i > step}
-                onClick={() => setStep(i as Step)}
+                disabled={i > furthest}
+                onClick={() => goto(i as Step)}
                 className={`flex-1 border-b-2 px-3 py-2 text-left transition-colors duration-120 disabled:cursor-not-allowed ${
                   state === 'here'
                     ? 'border-blueprint bg-blueprint-soft'
@@ -236,16 +250,16 @@ export function WpqrFlow() {
             onFiles={addFiles}
             onAssign={assign}
             onRemove={remove}
-            onContinue={() => setStep(1)}
+            onContinue={() => goto(1)}
           />
         )}
-        {step === 1 && <Agreement onContinue={() => setStep(2)} onBack={() => setStep(0)} />}
+        {step === 1 && <Agreement onContinue={() => goto(2)} onBack={() => goto(0)} />}
         {step === 2 && (
           <BuildWpqr
             draft={draft}
             onConfirmCell={confirmCell}
             onManualEntry={manualEntry}
-            onContinue={() => setStep(3)}
+            onContinue={() => goto(3)}
           />
         )}
         {step === 3 && <WpqrOutput draft={draft} onSign={sign} />}

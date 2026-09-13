@@ -180,11 +180,20 @@ function CellRow({
 
   return (
     <div className={`border-l-3 ${STATE_STYLE[cell.state]} ${last ? '' : 'border-b border-b-rule'}`}>
+      {/*
+        The sign action is a sibling of the expand toggle, not inside it, so a
+        row can be signed from the collapsed state in one click. Requiring an
+        expand first doubled the cost of a clean package to 36 clicks, which is
+        friction with no safety value -- the evidence is still one click away
+        for any row the inspector actually wants to interrogate. This is not a
+        bulk accept: each row is still its own deliberate decision.
+      */}
+      <div className="flex items-stretch">
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={open}
-        className="grid w-full grid-cols-[minmax(150px,1.1fr)_minmax(120px,1fr)_minmax(180px,1.6fr)_136px] items-start gap-3 px-3 py-2.5 text-left hover:bg-white"
+        className="grid min-w-0 flex-1 grid-cols-[minmax(150px,1.1fr)_minmax(120px,1fr)_minmax(180px,1.6fr)_136px] items-start gap-3 px-3 py-2.5 text-left hover:bg-white"
       >
         <span>
           <span className="block font-sans text-sm font-medium text-ink">
@@ -221,6 +230,18 @@ function CellRow({
           </span>
         </span>
       </button>
+
+        {!settled && !stuck && (
+          <button
+            type="button"
+            onClick={onConfirm}
+            title={`Sign off ${cell.variable}`}
+            className="shrink-0 border-l border-rule px-4 font-mono text-2xs font-medium uppercase tracking-label text-blueprint hover:bg-blueprint-soft"
+          >
+            Sign
+          </button>
+        )}
+      </div>
 
       {open && (
         <div className="border-t border-rule bg-paper px-3 py-3">

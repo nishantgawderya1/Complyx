@@ -16,10 +16,11 @@ Pillow==10.3.0
 # LLM
 openai==1.35.0
 
-# Knowledge base
-chromadb==0.5.3
-langchain==0.2.5
-langchain-text-splitters==0.2.1
+# Knowledge base: none. QW-423, QW-433, QW-451/452 and QW-461.9 are tables --
+# discrete inputs, discrete outputs -- and are encoded as versioned rule data in
+# knowledge_base/section_ix_data/. Vector retrieval can return the wrong row
+# with no visible symptom, which is the exact failure this architecture avoids.
+# chromadb and langchain were unused here and carried a pydantic conflict risk.
 
 # Database + auth
 supabase==2.5.1
