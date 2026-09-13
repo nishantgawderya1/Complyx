@@ -1,0 +1,160 @@
+{
+  "schema_version": "1",
+  "kb_version": "sec-ix/0.1",
+  "code_edition": "ASME BPVC.IX-2021",
+  "scope": "Welder performance qualification (QW-300 series). Procedure qualification (QW-200) is out of scope.",
+
+  "disclaimer": "Rows were read from the governing code edition named above and carry the page they were read from. NONE are reviewer-signed. An unsigned row is usable in development and must be visibly flagged wherever it is shown; it must never back a verdict issued to the field. The plant inspector signs each row, which sets verified/verified_by/verified_date.",
+
+  "licensing_note": "The ASME Section IX PDF is copyrighted and is never committed or stored in this repository. Only the numeric and categorical rule content below is encoded, which is the same licensing position already taken for the ASTM thresholds. `source_page` refers to the PDF page in the licensed copy so a reviewer can check a row against the book.",
+
+  "essential_variables": {
+    "clause_ref": "QW-353",
+    "title": "SMAW essential variables for welders",
+    "source_page": 126,
+    "verified": false,
+    "verified_by": null,
+    "verified_date": null,
+    "note": "A welder requalifies whenever one of these changes (QW-351). This list is what the derivation engine must produce a range for; anything outside it is recorded for information only.",
+    "process": "SMAW",
+    "variables": [
+      { "clause_ref": "QW-402.4", "brief": "Backing", "symbol": "minus", "meaning": "Deletion of backing is an essential variable." },
+      { "clause_ref": "QW-403.16", "brief": "Pipe diameter", "symbol": "phi", "meaning": "A change in pipe diameter group." },
+      { "clause_ref": "QW-403.18", "brief": "P-Number", "symbol": "phi", "meaning": "A change in base metal P-Number grouping." },
+      { "clause_ref": "QW-404.15", "brief": "F-Number", "symbol": "phi", "meaning": "A change in filler metal F-Number." },
+      { "clause_ref": "QW-404.30", "brief": "Weld deposit thickness", "symbol": "phi", "meaning": "A change beyond the thickness qualified by QW-452." },
+      { "clause_ref": "QW-405.1", "brief": "Position", "symbol": "plus", "meaning": "Addition of a position not qualified." },
+      { "clause_ref": "QW-405.3", "brief": "Vertical progression", "symbol": "phi", "meaning": "A change in uphill/downhill progression." }
+    ]
+  },
+
+  "qw_461_9": {
+    "clause_ref": "QW-461.9",
+    "title": "Performance qualification — position and diameter limitations",
+    "source_page": 248,
+    "note": "Groove columns are 'Plate and Pipe Over 24 in. (610 mm) O.D.' and 'Pipe <= 24 in. (610 mm) O.D.'. The fillet/tack column applies to pipe 73 mm O.D. and over where Note (3) is marked. Positions: F flat, H horizontal, V vertical, O overhead, SP special.",
+    "rows": [
+      { "coupon": "plate_groove", "test_position": "1G", "groove_plate_and_pipe_over_610": ["F"], "groove_pipe_610_and_under": ["F"], "pipe_note_3": true, "fillet_or_tack": ["F"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "plate_groove", "test_position": "2G", "groove_plate_and_pipe_over_610": ["F", "H"], "groove_pipe_610_and_under": ["F", "H"], "pipe_note_3": true, "fillet_or_tack": ["F", "H"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "plate_groove", "test_position": "3G", "groove_plate_and_pipe_over_610": ["F", "V"], "groove_pipe_610_and_under": ["F"], "pipe_note_3": true, "fillet_or_tack": ["F", "H", "V"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "plate_groove", "test_position": "4G", "groove_plate_and_pipe_over_610": ["F", "O"], "groove_pipe_610_and_under": ["F"], "pipe_note_3": true, "fillet_or_tack": ["F", "H", "O"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "plate_groove", "test_position": "3G+4G", "groove_plate_and_pipe_over_610": ["F", "V", "O"], "groove_pipe_610_and_under": ["F"], "pipe_note_3": true, "fillet_or_tack": ["ALL"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "plate_groove", "test_position": "2G+3G+4G", "groove_plate_and_pipe_over_610": ["ALL"], "groove_pipe_610_and_under": ["F", "H"], "pipe_note_3": true, "fillet_or_tack": ["ALL"], "verified": false, "verified_by": null, "verified_date": null },
+
+      { "coupon": "plate_fillet", "test_position": "1F", "groove_plate_and_pipe_over_610": null, "groove_pipe_610_and_under": null, "pipe_note_3": true, "fillet_or_tack": ["F"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "plate_fillet", "test_position": "2F", "groove_plate_and_pipe_over_610": null, "groove_pipe_610_and_under": null, "pipe_note_3": true, "fillet_or_tack": ["F", "H"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "plate_fillet", "test_position": "3F", "groove_plate_and_pipe_over_610": null, "groove_pipe_610_and_under": null, "pipe_note_3": true, "fillet_or_tack": ["F", "H", "V"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "plate_fillet", "test_position": "4F", "groove_plate_and_pipe_over_610": null, "groove_pipe_610_and_under": null, "pipe_note_3": true, "fillet_or_tack": ["F", "H", "O"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "plate_fillet", "test_position": "3F+4F", "groove_plate_and_pipe_over_610": null, "groove_pipe_610_and_under": null, "pipe_note_3": true, "fillet_or_tack": ["ALL"], "verified": false, "verified_by": null, "verified_date": null },
+
+      { "coupon": "pipe_groove", "test_position": "1G", "groove_plate_and_pipe_over_610": ["F"], "groove_pipe_610_and_under": ["F"], "pipe_note_3": false, "fillet_or_tack": ["F"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "pipe_groove", "test_position": "2G", "groove_plate_and_pipe_over_610": ["F", "H"], "groove_pipe_610_and_under": ["F", "H"], "pipe_note_3": false, "fillet_or_tack": ["F", "H"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "pipe_groove", "test_position": "5G", "groove_plate_and_pipe_over_610": ["F", "V", "O"], "groove_pipe_610_and_under": ["F", "V", "O"], "pipe_note_3": false, "fillet_or_tack": ["ALL"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "pipe_groove", "test_position": "6G", "groove_plate_and_pipe_over_610": ["ALL"], "groove_pipe_610_and_under": ["ALL"], "pipe_note_3": false, "fillet_or_tack": ["ALL"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "pipe_groove", "test_position": "2G+5G", "groove_plate_and_pipe_over_610": ["ALL"], "groove_pipe_610_and_under": ["ALL"], "pipe_note_3": false, "fillet_or_tack": ["ALL"], "verified": false, "verified_by": null, "verified_date": null },
+
+      { "coupon": "pipe_fillet", "test_position": "1F", "groove_plate_and_pipe_over_610": null, "groove_pipe_610_and_under": null, "pipe_note_3": false, "fillet_or_tack": ["F"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "pipe_fillet", "test_position": "2F", "groove_plate_and_pipe_over_610": null, "groove_pipe_610_and_under": null, "pipe_note_3": false, "fillet_or_tack": ["F", "H"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "pipe_fillet", "test_position": "2FR", "groove_plate_and_pipe_over_610": null, "groove_pipe_610_and_under": null, "pipe_note_3": false, "fillet_or_tack": ["F", "H"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "pipe_fillet", "test_position": "4F", "groove_plate_and_pipe_over_610": null, "groove_pipe_610_and_under": null, "pipe_note_3": false, "fillet_or_tack": ["F", "H", "O"], "verified": false, "verified_by": null, "verified_date": null },
+      { "coupon": "pipe_fillet", "test_position": "5F", "groove_plate_and_pipe_over_610": null, "groove_pipe_610_and_under": null, "pipe_note_3": false, "fillet_or_tack": ["ALL"], "verified": false, "verified_by": null, "verified_date": null }
+    ]
+  },
+
+  "qw_452_1a": {
+    "clause_ref": "QW-452.1(a)",
+    "title": "Test specimens required by weld metal thickness",
+    "source_page": 239,
+    "note": "Thickness of weld metal is the total deposited by all welders and all processes in the coupon, excluding reinforcement. Note (1): positions 5G or 6G require four bend specimens; a 2G+5G combination requires six. Note (3): one face and one root bend may be substituted for the two side bends.",
+    "bands": [
+      { "min_mm": 0, "max_mm": 10, "max_inclusive": false, "visual": true, "side_bend": 0, "face_bend": 1, "root_bend": 1, "verified": false, "verified_by": null, "verified_date": null },
+      { "min_mm": 10, "max_mm": 19, "max_inclusive": false, "visual": true, "side_bend": 2, "face_bend": 0, "root_bend": 0, "substitution_note": "One face and one root bend may be substituted for the two side bends.", "verified": false, "verified_by": null, "verified_date": null },
+      { "min_mm": 19, "max_mm": null, "max_inclusive": false, "visual": true, "side_bend": 2, "face_bend": 0, "root_bend": 0, "verified": false, "verified_by": null, "verified_date": null }
+    ]
+  },
+
+  "qw_452_1b": {
+    "clause_ref": "QW-452.1(b)",
+    "title": "Thickness of weld metal qualified",
+    "source_page": 239,
+    "note": "The three-layer condition requires BOTH a coupon of 13 mm or more AND a minimum of three layers. Either alone gives 2t. This is the rule the 'three layers minimum' mark on the WPQR decides.",
+    "rules": [
+      { "id": "max_to_be_welded", "min_thickness_mm": 13, "requires_three_layers": true, "qualified": "Maximum to be welded", "verified": false, "verified_by": null, "verified_date": null },
+      { "id": "twice_t", "min_thickness_mm": 0, "requires_three_layers": false, "qualified": "2t", "verified": false, "verified_by": null, "verified_date": null }
+    ]
+  },
+
+  "qw_433": {
+    "clause_ref": "QW-433",
+    "title": "Alternate F-numbers for welder performance qualification",
+    "source_page": 235,
+    "note": "PARTIAL. The printed table is a 10-column matrix and only the F-No. 4 columns were recovered with confidence from the licensed copy; the remaining columns are deliberately absent rather than inferred, because a wrong substitution row lets a welder use a filler metal they are not qualified for with no visible symptom. Add rows only from the book.",
+    "qualified_with": [
+      {
+        "f_number": 4,
+        "backing": "without",
+        "qualifies": [
+          { "f_number": 4, "backing": "without" },
+          { "f_number": 4, "backing": "with" },
+          { "f_number": 3, "backing": "with" },
+          { "f_number": 2, "backing": "with" },
+          { "f_number": 1, "backing": "with" }
+        ],
+        "verified": false,
+        "verified_by": null,
+        "verified_date": null
+      },
+      {
+        "f_number": 4,
+        "backing": "with",
+        "qualifies": [
+          { "f_number": 4, "backing": "with" },
+          { "f_number": 3, "backing": "with" },
+          { "f_number": 2, "backing": "with" },
+          { "f_number": 1, "backing": "with" }
+        ],
+        "verified": false,
+        "verified_by": null,
+        "verified_date": null
+      }
+    ],
+    "electrode_f_numbers": [
+      { "aliases": ["e7018", "e-7018", "sfa5.1e7018", "sfa51e7018"], "f_number": 4, "spec": "SFA-5.1", "verified": false, "verified_by": null, "verified_date": null },
+      { "aliases": ["e7016", "e-7016"], "f_number": 4, "spec": "SFA-5.1", "verified": false, "verified_by": null, "verified_date": null },
+      { "aliases": ["e6010", "e-6010"], "f_number": 3, "spec": "SFA-5.1", "verified": false, "verified_by": null, "verified_date": null },
+      { "aliases": ["e6013", "e-6013"], "f_number": 2, "spec": "SFA-5.1", "verified": false, "verified_by": null, "verified_date": null },
+      { "aliases": ["e6020", "e-6020"], "f_number": 1, "spec": "SFA-5.1", "verified": false, "verified_by": null, "verified_date": null }
+    ]
+  },
+
+  "qw_402_4": {
+    "clause_ref": "QW-402.4",
+    "title": "Backing",
+    "source_page": 126,
+    "note": "Listed in Table QW-353 with the deletion symbol: removing backing is the essential change. A coupon welded WITHOUT backing therefore qualifies both with and without; a coupon welded WITH backing qualifies only with.",
+    "rules": [
+      { "welded": "without", "qualified": "With and without backing", "verified": false, "verified_by": null, "verified_date": null },
+      { "welded": "with", "qualified": "With backing only", "verified": false, "verified_by": null, "verified_date": null }
+    ]
+  },
+
+  "qw_405_3": {
+    "clause_ref": "QW-405.3",
+    "title": "Vertical progression",
+    "source_page": 126,
+    "note": "Listed in Table QW-353 as a change variable for SMAW. Progression qualified is the progression welded.",
+    "rules": [
+      { "welded": "uphill", "qualified": "Uphill only", "verified": false, "verified_by": null, "verified_date": null },
+      { "welded": "downhill", "qualified": "Downhill only", "verified": false, "verified_by": null, "verified_date": null }
+    ]
+  },
+
+  "qw_403_18": {
+    "clause_ref": "QW-403.18",
+    "title": "Base metal P-number",
+    "source_page": 126,
+    "encoded": false,
+    "note": "NOT ENCODED. QW-403.18 is an essential variable for SMAW, but the P-number grouping table (QW-423) was not recovered from the licensed copy with enough confidence to encode. Any P-number derivation therefore returns 'rule not found' and routes to REVIEW. It must never fall back to a near match: returning the wrong P-number range qualifies a welder for base metals they were not tested on, and the arithmetic downstream runs perfectly while doing it.",
+    "rules": []
+  }
+}
