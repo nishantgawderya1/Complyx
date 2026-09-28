@@ -15,7 +15,7 @@ import { NavLink } from 'react-router-dom';
 const GROUPS: { heading: string; items: { to: string; label: string }[] }[] = [
   {
     heading: 'Build',
-    items: [{ to: '/', label: 'New WPQR' }],
+    items: [{ to: '/dashboard', label: 'New WPQR' }],
   },
   {
     heading: 'Review',
@@ -58,7 +58,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                 <NavLink
                   key={item.to}
                   to={item.to}
-                  end={item.to === '/'}
+                  end={item.to === '/dashboard'}
                   className={({ isActive }) =>
                     `block border-l-2 px-4 py-1.5 font-sans text-sm transition-colors duration-120 ${
                       isActive

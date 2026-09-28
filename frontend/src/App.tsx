@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { AppShell } from '@/components/layout/AppShell';
+import { Landing } from '@/screens/Landing';
 import { Worklist } from '@/screens/Worklist';
 import { PackageDetail } from '@/screens/PackageDetail';
 import { CheckboxReview } from '@/screens/CheckboxReview';
@@ -23,10 +24,16 @@ import { WpqrFlow } from '@/screens/wpqr/WpqrFlow';
  */
 export default function App() {
   return (
-    <AppShell>
-      <Routes>
-        {/* The product: three sources in, one signed WPQR out. */}
-        <Route path="/" element={<WpqrFlow />} />
+    <Routes>
+      <Route path="/" element={<Landing />} />
+
+      <Route
+        path="/*"
+        element={
+          <AppShell>
+            <Routes>
+              {/* The product: three sources in, one signed WPQR out. */}
+              <Route path="/dashboard" element={<WpqrFlow />} />
         <Route path="/packages" element={<Worklist />} />
         <Route path="/package/:id" element={<PackageDetail />} />
         <Route path="/package/:id/checkbox/:checkboxId" element={<CheckboxReview />} />
@@ -152,8 +159,11 @@ export default function App() {
           }
         />
 
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </AppShell>
+              <Route path="*" element={<Navigate to="/dashboard" replace />} />
+            </Routes>
+          </AppShell>
+        }
+      />
+    </Routes>
   );
 }
